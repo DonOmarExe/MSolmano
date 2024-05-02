@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleLogin()">&times;</span>
+            <h2>Iniciar sesión/Registrarse</h2>
+            <form id="login-form">
+                <input type="email" placeholder="Correo electrónico" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar sesión</button>
+            </form>
+            <p>¿No tienes una cuenta? <a href="#" onclick="toggleRegister()">Registrarse</a></p>
+        </div>
+    </div>
+
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleRegister()">&times;</span>
+            <h2>Registro</h2>
+            <form id="register-form">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit">Registrarse</button>
+            </form>
+            <p>¿Ya tienes una cuenta? <a href="#" onclick="toggleLogin()">Iniciar sesión</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Todos los derechos reservados &copy; 2024</p>
+    </footer>
+
+    <script>
+        function toggleLogin() {
+            var modal = document.getElementById("login-modal");
+            modal.style.display = (modal.style.display === "block") ? "none" : "block";
+        }
+
+        function toggleRegister() {
+            var modal = document.getElementById("register-modal");
+            modal.style.display = (modal.style.display === "block") ? "none" : "block";
+        }
+    </script>
+</body>
+</html>

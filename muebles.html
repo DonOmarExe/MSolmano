@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda en línea - Muebles</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS para estilos adicionales -->
+</head>
+<body>
+    <header>
+        <h1>MUEBLES</h1>
+        <nav>
+            <ul>
+                <li><a href="SolMano.html">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Productos Destacados</h2>
+        <div class="product">
+            <h3>Sofá seccional</h3>
+            <p>Precio: $999.99</p> 
+            <img src="sofa.jpg">
+            <button onclick="addToCart('Sofá seccional', 999.99)">Agregar al carrito</button>
+        </div>
+        <div class="product">
+            <h3>Mesa de comedor</h3>
+            <p>Precio: $499.99</p>
+            <img src="mesa.jpg">
+            <button onclick="addToCart('Mesa de comedor', 499.99)">Agregar al carrito</button>
+        </div>
+        <div class="product">
+            <h3>Silla de escritorio</h3>
+            <p>Precio: $199.99</p>
+            <img src="silla.jpg">
+            <button onclick="addToCart('Silla de escritorio', 199.99)">Agregar al carrito</button>
+        </div>
+        <!-- Agregar más productos destacados aquí -->
+    </section>
+
+    <footer>
+        <p>Todos los derechos reservados &copy; 2024</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Archivo JavaScript para funcionalidad adicional -->
+</body>
+</html>
