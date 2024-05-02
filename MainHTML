@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda en línea</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS para estilos adicionales -->
+    <style>
+        .login-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a nuestra tienda en línea</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tecnologia.html">Electrónicos</a></li>
+                <li><a href="abarrotes.html">Abarrotes</a></li>
+                <li><a href="muebles.html">Muebleria</a></li>
+                <li><a href="juguetes.html">Jugueteria</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+        <a href="registro.html" class="login-button">Iniciar sesión/Registrarse</a>
+    </header>
+
+    <section>
+        <h2>Productos Destacados</h2>
+        <div class="product">
+            <h3>Muñeca barbie</h3>
+            <p>Precio: $19.99</p>
+            <img src="mune.jpeg">
+            <a href="carrito.html?product=1">Agregar al carrito</a>
+        </div>
+        <div class="product">
+            <img src="product2.jpg" alt="Producto 2">
+            <h3>Producto 2</h3>
+            <p>Precio: $24.99</p>
+            <a href="carrito.html?product=2">Agregar al carrito</a>
+        </div>
+        <!-- Agregar más productos destacados aquí -->
+    </section>
+
+    <footer>
+        <p>Todos los derechos reservados &copy; 2024</p>
+    </footer>
+</body>
+</html>
