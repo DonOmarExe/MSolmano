@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda en línea - Juguetes</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS para estilos adicionales -->
+</head>
+<body>
+    <header>
+        <h1>JUGUETES</h1>
+        <nav>
+            <ul>
+                <li><a href="SolMano.html">Inicio</a></li>
+           </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Productos Destacados</h2>
+        <div class="product">
+            <h3>Set de legos</h3>
+            <p>Precio: $29.99</p> 
+            <img src="legos.jpg">
+            <button onclick="addToCart('Set de legos', 29.99)">Agregar al carrito</button>
+        </div>
+        <div class="product">
+            <h3>Muñeca Barbie</h3>
+            <p>Precio: $19.99</p>
+            <img src="barbie.jpg">
+            <button onclick="addToCart('Muñeca Barbie', 19.99)">Agregar al carrito</button>
+        </div>
+        <div class="product">
+            <h3>Pelota de fútbol</h3>
+            <p>Precio: $9.99</p>
+            <img src="pelota.jpg">
+            <button onclick="addToCart('Pelota de fútbol', 9.99)">Agregar al carrito</button>
+        </div>
+        <!-- Agregar más productos destacados aquí -->
+    </section>
+
+    <footer>
+        <p>Todos los derechos reservados &copy; 2024</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Archivo JavaScript para funcionalidad adicional -->
+</body>
+</html>
