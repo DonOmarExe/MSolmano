@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda en línea</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS para estilos adicionales -->
+</head>
+<body>
+    <header>
+        <h1>TECNOLOGIA</h1>
+        <nav>
+            <ul>
+                <li><a href="SolMano.html">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Productos Destacados</h2>
+        <div class="product">
+            <h3>Videojuego Kirby and the forgotten island</h3>
+            <p>Precio: $19.99</p> 
+            <img src="kirby.jpg">
+            <button onclick="addToCart('Videojuego Kirby and the forgotten island', 19.99)">Agregar al carrito</button>
+        </div>
+        <div class="product">
+            <h3>Laptop HP</h3>
+            <p>Precio: $15000</p>
+            <img src="lap.jpg">
+            <button onclick="addToCart('Laptop HP', 15000)">Agregar al carrito</button>
+        </div>
+        <div class="product">
+            <h3>Television lacoste</h3>
+            <p>Precio: $7999.99</p>
+            <img src="lacoste.jpeg">
+            <button onclick="addToCart('Television lacoste', 7999.99)">Agregar al carrito</button>
+        </div>
+        <div class="product">
+            <h3>Patines motorizados</h3>
+            <p>Precio: $1999.99</p>
+            <img src="doki.jpeg">
+            <button onclick="addToCart('Patines motorizados', 1999.99)">Agregar al carrito</button>
+        </div>
+        <!-- Agregar más productos destacados aquí -->
+    </section>
+
+    <footer>
+        <p>Todos los derechos reservados &copy; 2024</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Archivo JavaScript para funcionalidad adicional -->
+</body>
+</html>
