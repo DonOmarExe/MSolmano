@@ -1,0 +1,52 @@
+<?php
+// Obtener los datos enviados desde el formulario
+$name = $_POST['name'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+// Validar y filtrar los datos (agrega más validaciones según tus necesidades)
+
+// Realizar la conexión a Oracle SQL
+$servername = "tu_servidor";
+$username = "tu_usuario";
+$password = "tu_contraseña";
+$database = "tu_base_de_datos";
+
+$conn = oci_connect($username, $password, $servername);
+
+if (!$conn) {
+    $error = oci_error();
+    echo "Error de conexión a Oracle: " . $error['message'];
+    exit();
+}
+
+// Verificar si el correo electrónico ya está registrado en la base de datos
+$sql = "SELECT * FROM usuarios WHERE email = :email";
+$stmt = oci_parse($conn, $sql);
+oci_bind_by_name($stmt, ":email", $email);
+oci_execute($stmt);
+
+if (oci_fetch_assoc($stmt)) {
+    // El correo electrónico ya está registrado, puedes mostrar un mensaje de error o redirigir al usuario a otra página
+    echo "El correo electrónico ya está registrado";
+} else {
+    // Insertar el nuevo usuario en la base de datos
+    $sql = "INSERT INTO usuarios (nombre, email, password) VALUES (:nombre, :email, :password)";
+    $stmt = oci_parse($conn, $sql);
+    oci_bind_by_name($stmt, ":nombre", $name);
+    oci_bind_by_name($stmt, ":email", $email);
+    oci_bind_by_name($stmt, ":password", $password);
+
+    if (oci_execute($stmt)) {
+        // Registro exitoso, puedes mostrar un mensaje de éxito o redirigir al usuario a otra página
+        echo "Registro exitoso";
+    } else {
+        // Error al insertar el usuario, puedes mostrar un mensaje de error o redirigir al usuario a otra página
+        echo "Error al registrar el usuario";
+    }
+}
+
+// Cerrar la conexión a Oracle SQL
+oci_free_statement($stmt);
+oci_close($conn);
+?>
