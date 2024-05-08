@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Envío</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS para estilos adicionales -->
+    <style>
+        body {
+            background-color: #05e3eb; /* Morado oscuro */
+        }
+        .success-message {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Formulario de Envío</h1>
+        <nav>
+            <ul>
+                <li><a href="SolMano.html">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Ingrese sus datos para el envío</h2>
+
+        <form id="envio-form" action="procesar_envio.php" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" required>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+
+    <footer>
+        <p>Todos los derechos reservados © 2024</p>
+    </footer>
+
+    <script>
+        document.getElementById('envio-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
+
+            // Realizar aquí cualquier validación adicional que necesites
+
+            // Simular una respuesta exitosa del servidor
+            // Aquí puedes agregar el código para realizar las acciones necesarias (guardar en la base de datos, enviar correo, etc.)
+            // ...
+
+            // Mostrar la notificación de éxito
+            var successMessage = document.createElement('p');
+            successMessage.className = 'success-message';
+            successMessage.textContent = 'Datos guardados correctamente. Sus productos ya se encuentran en camino.';
+            document.body.appendChild(successMessage);
+
+            // Redireccionar a SolMano.html después de 3 segundos
+            setTimeout(function() {
+                window.location.href = 'SolMano.html';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

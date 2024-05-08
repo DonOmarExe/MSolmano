@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>Tienda en línea - Juguetes</title>
     <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS para estilos adicionales -->
+    <style>
+        body {
+            background-color: #05e3eb; /* Morado oscuro */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -11,7 +16,8 @@
         <nav>
             <ul>
                 <li><a href="SolMano.html">Inicio</a></li>
-           </ul>
+                <li><a href="carrito.html">Carrito de compras</a></li> <!-- Agregado enlace al carrito -->
+            </ul>
         </nav>
     </header>
 
@@ -21,7 +27,7 @@
             <h3>Muñeca nendroid sayori</h3>          
             <img src="sayo.jpg">
             <p>Precio: $3000</p> 
-            <button onclick="addToCart('Set de legos', 29.99)">Agregar al carrito</button>
+            <button onclick="addToCart('Muñeca nendroid sayori', 3000)">Agregar al carrito</button>
         </div>
         <div class="product">
             <h3>Muñeca Barbie</h3>           
@@ -43,5 +49,14 @@
     </footer>
 
     <script src="script.js"></script> <!-- Archivo JavaScript para funcionalidad adicional -->
+    <script>
+        function addToCart(productName, price) {
+          // Crear la URL con los parámetros de consulta
+          var url = 'carrito.html?productName=' + encodeURIComponent(productName) + '&price=' + encodeURIComponent(price);
+
+          // Redireccionar a la página "carrito.html"
+          window.location.href = url;
+        }
+    </script>
 </body>
 </html>

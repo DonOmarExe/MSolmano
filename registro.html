@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+        body {
+            background-color: #05e3eb; /* Morado oscuro */
+        }
+    </style>
     <div id="login-modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="toggleLogin()">&times;</span>
@@ -10,24 +15,11 @@
                 <input type="password" placeholder="Contraseña" required>
                 <button type="submit">Iniciar sesión</button>
             </form>
-            <p>¿No tienes una cuenta? <a href="#" onclick="toggleRegister()">Registrarse</a></p>
+            <p>¿No tienes una cuenta? <a href="inscribir.html" onclick="toggleRegister()">Registrarse</a></p>
         </div>
     </div>
 
-    <div id="register-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="toggleRegister()">&times;</span>
-            <h2>Registro</h2>
-            <form id="register-form">
-                <input type="text" placeholder="Nombre completo" required>
-                <input type="email" placeholder="Correo electrónico" required>
-                <input type="password" placeholder="Contraseña" required>
-                <button type="submit">Registrarse</button>
-            </form>
-            <p>¿Ya tienes una cuenta? <a href="#" onclick="toggleLogin()">Iniciar sesión</a></p>
-        </div>
-    </div>
-
+    
     <footer>
         <p>Todos los derechos reservados &copy; 2024</p>
     </footer>

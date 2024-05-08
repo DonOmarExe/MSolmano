@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <title>Tienda en línea</title>
     <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS para estilos adicionales -->
+    <style>
+        body {
+            background-color: #05e3eb; /* Morado oscuro */
+        }
+
+        .product img {
+            width: 200px; /* Establece el ancho deseado para las imágenes */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -19,27 +28,27 @@
         <h2>Productos Destacados</h2>
         <div class="product">
             <h3>Videojuego Kirby and the forgotten island</h3>
-            <p>Precio: $19.99</p> 
             <img src="kirby.jpg">
-            <button onclick="addToCart('Videojuego Kirby and the forgotten island', 19.99)">Agregar al carrito</button>
+            <p>Precio: $3000</p> 
+            <button onclick="addToCart('Videojuego Kirby and the forgotten island', 3000)">Agregar al carrito</button>
         </div>
         <div class="product">
             <h3>Laptop HP</h3>
-            <p>Precio: $15000</p>
             <img src="lap.jpg">
-            <button onclick="addToCart('Laptop HP', 15000)">Agregar al carrito</button>
+            <p>Precio: $8000</p>
+            <button onclick="addToCart('Laptop HP', 8000)">Agregar al carrito</button>
         </div>
         <div class="product">
             <h3>Television lacoste</h3>
-            <p>Precio: $7999.99</p>
             <img src="lacoste.jpeg">
+            <p>Precio: $7999.99</p>
             <button onclick="addToCart('Television lacoste', 7999.99)">Agregar al carrito</button>
         </div>
         <div class="product">
             <h3>Patines motorizados</h3>
-            <p>Precio: $1999.99</p>
             <img src="doki.jpeg">
-            <button onclick="addToCart('Patines motorizados', 1999.99)">Agregar al carrito</button>
+            <p>Precio: $2999.99</p>
+            <button onclick="addToCart('Patines motorizados', 2999.99)">Agregar al carrito</button>
         </div>
         <!-- Agregar más productos destacados aquí -->
     </section>
@@ -49,5 +58,14 @@
     </footer>
 
     <script src="script.js"></script> <!-- Archivo JavaScript para funcionalidad adicional -->
+    <script>
+        function addToCart(productName, price) {
+          // Crear la URL con los parámetros de consulta
+          var url = 'carrito.html?productName=' + encodeURIComponent(productName) + '&price=' + encodeURIComponent(price);
+
+          // Redireccionar a la página "carrito.html"
+          window.location.href = url;
+        }
+    </script>
 </body>
 </html>

@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <title>Tienda en línea - Muebles</title>
     <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS para estilos adicionales -->
+    <style>
+        body {
+            background-color: #05e3eb; /* Morado oscuro */
+        }
+
+        .product img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -43,5 +53,14 @@
     </footer>
 
     <script src="script.js"></script> <!-- Archivo JavaScript para funcionalidad adicional -->
+    <script>
+        function addToCart(productName, price) {
+          // Crear la URL con los parámetros de consulta
+          var url = 'carrito.html?productName=' + encodeURIComponent(productName) + '&price=' + encodeURIComponent(price);
+
+          // Redireccionar a la página "carrito.html"
+          window.location.href = url;
+        }
+    </script>
 </body>
 </html>

@@ -5,16 +5,24 @@
     <title>Tienda en línea</title>
     <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS para estilos adicionales -->
     <style>
+        body {
+            background-color: #05e3eb; /* Morado oscuro */
+        }
+
         .login-button {
             position: absolute;
             top: 10px;
             right: 10px;
         }
+
+        .product img {
+            width: 200px; /* Establece el ancho deseado para las imágenes */
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Bienvenido a nuestra tienda en línea</h1>
+        <h1>Bienvenido a Mercado SolMano</h1>
         <nav>
             <ul>
                 <li><a href="tecnologia.html">Electrónicos</a></li>
@@ -27,25 +35,47 @@
         <a href="registro.html" class="login-button">Iniciar sesión/Registrarse</a>
     </header>
 
-    <section>
-        <h2>Productos Destacados</h2>
-        <div class="product">
-            <h3>Muñeca barbie</h3>
-            <img src="mune.jpeg">
-            <p>Precio: $19.99</p>
-            <a href="carrito.html?product=1">Agregar al carrito</a>
-        </div>
-        <div class="product">
-            <h3>Pan integral</h3>
-            <img src="pan.jpg">
-            <p>Precio: $30</p>
-            <a href="carrito.html?product=2">Agregar al carrito</a>
-        </div>
-        <!-- Agregar más productos destacados aquí -->
-    </section>
+<section>
+    <h2>Productos Destacados</h2>
+    <div class="product">
+        <h3>Muñeca barbie</h3>
+        <img src="mune.jpeg">
+        <p>Precio: $345</p>
+        <button onclick="addToCart('Muñeca barbie', 345)">Agregar al carrito</button>
+    </div>
+    <div class="product">
+        <h3>Pan integral Bimbo</h3>
+        <img src="pan.jpg">
+        <p>Precio: $30</p>
+        <button onclick="addToCart('Pan integral Bimbo', 30)">Agregar al carrito</button>
+    </div>
+    <div class="product">
+        <h3>Samsung Galaxy S21</h3>
+        <img src="samsung.jpg">
+        <p>Precio: $3000</p>
+        <button onclick="addToCart('Samsung Galaxy S21', 3000)">Agregar al carrito</button>
+    </div>
+    <div class="product">
+        <h3>Camiseta Nike</h3>
+        <img src="nike.jpg">
+        <p>Precio: $240</p>
+        <button onclick="addToCart('Camiseta Nike', 240)">Agregar al carrito</button>
+    </div>
+    <!-- Agregar más productos aquí -->
+</section>
 
     <footer>
         <p>Todos los derechos reservados &copy; 2024</p>
     </footer>
+ <script>
+        function addToCart(productName, price) {
+          // Crear la URL con los parámetros de consulta
+          var url = 'carrito.html?productName=' + encodeURIComponent(productName) + '&price=' + encodeURIComponent(price);
+
+          // Redireccionar a la página "carrito.html"
+          window.location.href = url;
+        }
+    </script>
+
 </body>
 </html>

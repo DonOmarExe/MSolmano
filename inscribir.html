@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+        body {
+            background-color: #05e3eb; /* Morado oscuro */
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS para estilos adicionales -->
+    <style>
+        .notification {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .success {
+            background-color: #4CAF50; /* Verde */
+            color: white;
+        }
+
+        .error {
+            background-color: #f44336; /* Rojo */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Registro de Usuario</h1>
+    </header>
+
+    <section>
+        <form onsubmit="return validateForm()">
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div>
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+            </div>
+            <div>
+                <label for="confirmar-contrasena">Confirmar Contraseña:</label>
+                <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" required>
+            </div>
+            <div>
+                <input type="submit" value="Registrar">
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>Todos los derechos reservados &copy; 2024</p>
+    </footer>
+
+    <script>
+        function validateForm() {
+            var contrasena = document.getElementById("contrasena").value;
+            var confirmarContrasena = document.getElementById("confirmar-contrasena").value;
+
+            if (contrasena !== confirmarContrasena) {
+                showNotification("Las contraseñas no coinciden", "error");
+                return false;
+            }
+
+            showNotification("Usuario registrado exitosamente", "success");
+            setTimeout(function() {
+                window.location.href = "SolMano.html";
+            }, 2000);
+
+            return false;
+        }
+
+        function showNotification(message, type) {
+            var notification = document.createElement("div");
+            notification.textContent = message;
+            notification.classList.add("notification", type);
+            document.body.appendChild(notification);
+            setTimeout(function() {
+                document.body.removeChild(notification);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
