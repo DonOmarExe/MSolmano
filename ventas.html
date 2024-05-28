@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Visor de Productos Comprados</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #C3E6ED; /* Celeste */
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #FFFFFF; /* Fondo blanco para la tabla */
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Visor de Productos Comprados</h1>
+  
+  <table id="productTable">
+    <tr>
+      <th>Producto</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Fecha de Compra</th>
+      <th>Acción</th>
+    </tr>
+    <tr>
+      <td>Muñeca barbie</td>
+      <td>Descripción del producto Muñeca barbie</td>
+      <td contenteditable="true" onblur="updatePrice('Muñeca barbie', this.textContent)">$345</td>
+      <td>01/05/2024</td>
+      <td><button onclick="updatePrice('Muñeca barbie', this.previousElementSibling.textContent)">Guardar</button></td>
+    </tr>
+    <tr>
+      <td>Pan integral Bimbo</td>
+      <td>Descripción del producto Pan integral Bimbo</td>
+      <td contenteditable="true" onblur="updatePrice('Pan integral Bimbo', this.textContent)">$30</td>
+      <td>02/05/2024</td>
+      <td><button onclick="updatePrice('Pan integral Bimbo', this.previousElementSibling.textContent)">Guardar</button></td>
+    </tr>
+    <tr>
+      <td>Samsung Galaxy S21</td>
+      <td>Descripción del producto Samsung Galaxy S21</td>
+      <td contenteditable="true" onblur="updatePrice('Samsung Galaxy S21', this.textContent)">$3000</td>
+      <td>03/05/2024</td>
+      <td><button onclick="updatePrice('Samsung Galaxy S21', this.previousElementSibling.textContent)">Guardar</button></td>
+    </tr>
+    <tr>
+      <td>Camiseta Nike</td>
+      <td>Descripción del producto Camiseta Nike</td>
+      <td contenteditable="true" onblur="updatePrice('Camiseta Nike', this.textContent)">$240</td>
+      <td>04/05/2024</td>
+      <td><button onclick="updatePrice('Camiseta Nike', this.previousElementSibling.textContent)">Guardar</button></td>
+    </tr>
+    <!-- Agrega más filas según los productos comprados -->
+  </table>
+
+  <script>
+    function updatePrice(productName, newPrice) {
+      // Actualiza el precio en localStorage
+      localStorage.setItem(productName, newPrice.replace('$', ''));
+      // Actualiza el botón de agregar al carrito en la página principal
+      const priceElements = document.querySelectorAll('.price');
+      priceElements.forEach(priceElement => {
+        if (priceElement.getAttribute('data-product') === productName) {
+          priceElement.textContent = newPrice.replace('$', '');
+          const button = priceElement.parentElement.nextElementSibling;
+          button.setAttribute('onclick', `addToCart('${productName}', ${newPrice.replace('$', '')})`);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
